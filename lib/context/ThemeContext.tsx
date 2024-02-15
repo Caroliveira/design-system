@@ -1,6 +1,5 @@
 import { useState, useEffect, ReactNode, createContext } from "react";
 import { defaultColors } from "../utils/constants";
-import "../assets/main.css";
 
 type ThemeContextType = {
   setTheme: (theme: string) => void;

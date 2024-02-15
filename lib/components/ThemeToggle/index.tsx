@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import styles from "./ThemeToggle.module.css";
 
-type ThemeToggleProps = {
+export type ThemeToggleProps = {
   enableDarkThemeLabel?: string;
   enableLightThemeLabel?: string;
 };
