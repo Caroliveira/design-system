@@ -22,8 +22,8 @@ jobs:
 
       - name: Bump version based on commit messages
         run: |
-          chmod +x ./scripts/analyze-commits-and-bump.sh
-          ./scripts/analyze-commits-and-bump.sh
+          chmod +x ./scripts/bump-version.sh
+          ./scripts/bump-version.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
