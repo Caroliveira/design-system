@@ -16,16 +16,14 @@ export const ThemeContext = createContext(defaultThemeContext);
 
 type ThemeProviderProps = {
   children: ReactNode;
-  colors?: typeof defaultColors;
+  colors?: Partial<typeof defaultColors>;
 };
 
-export const ThemeProvider = ({ children, colors }: ThemeProviderProps) => {
+export const ThemeProvider = ({
+  children,
+  colors = {},
+}: ThemeProviderProps) => {
   const [theme, setTheme] = useState("dark");
-
-  const setThemeColor = (name: string, color: string, isVar = true) => {
-    const docStyle = document.documentElement.style;
-    docStyle.setProperty(name, isVar ? `var(${color})` : color);
-  };
 
   useEffect(() => {
     const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
@@ -34,15 +32,17 @@ export const ThemeProvider = ({ children, colors }: ThemeProviderProps) => {
   }, []);
 
   useEffect(() => {
+    const docStyle = document.documentElement.style;
     const themeColors = { ...defaultColors, ...colors };
-    setThemeColor("--light-shades-color", themeColors.lightShades, false);
-    setThemeColor("--light-accent-color", themeColors.lightAccent, false);
-    setThemeColor("--brand-color", themeColors.brandColor, false);
-    setThemeColor("--dark-accent-color", themeColors.darkAccent, false);
-    setThemeColor("--dark-shades-color", themeColors.darkShades, false);
-    setThemeColor("--success-color", themeColors.success, false);
-    setThemeColor("--warning-color", themeColors.warning, false);
-    setThemeColor("--danger-color", themeColors.danger, false);
+    docStyle.setProperty("--light-shades-color", themeColors.lightShades);
+    docStyle.setProperty("--light-accent-color", themeColors.lightAccent);
+    docStyle.setProperty("--brand-color", themeColors.brandColor);
+    docStyle.setProperty("--brand-accent-color", themeColors.brandAccent);
+    docStyle.setProperty("--dark-accent-color", themeColors.darkAccent);
+    docStyle.setProperty("--dark-shades-color", themeColors.darkShades);
+    docStyle.setProperty("--success-color", themeColors.success);
+    docStyle.setProperty("--warning-color", themeColors.warning);
+    docStyle.setProperty("--danger-color", themeColors.danger);
   }, [colors]);
 
   useEffect(() => {
