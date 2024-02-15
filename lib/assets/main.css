@@ -1,0 +1,24 @@
+:root {
+  --light-shades-color: #ebe9e5;
+  --light-accent-color: #858486;
+  --brand-color: #ad4022;
+  --dark-accent-color: #c47f4a;
+  --dark-shades-color: #2e2d34;
+  --success-color: #6a8e43;
+  --warning-color: #e87e0b;
+  --danger-color: #f44336;
+}
+
+body.dark {
+  --primary-background-color: var(--dark-shades-color);
+  --secondary-background-color: var(--dark-accent-color);
+  --primary-text-color: var(--light-shades-color);
+  --secondary-text-color: var(--light-accent-color);
+}
+
+body.light {
+  --primary-background-color: var(--light-shades-color);
+  --secondary-background-color: var(--light-accent-color);
+  --primary-text-color: var(--dark-shades-color);
+  --secondary-text-color: var(--dark-accent-color);
+}
