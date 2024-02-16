@@ -23,10 +23,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # - name: Configure Git user
-      #   run: |
-      #     git config --local user.email "linaribeirooliveira@gmail.com"
-      #     git config --local user.name "Caroliveira"
+      - name: Configure Git user
+        run: |
+          git config --local user.email "linaribeirooliveira@gmail.com"
+          git config --local user.name "Caroliveira"
 
       - name: Bump version based on commit messages
         run: bash ./scripts/bump-version.sh
