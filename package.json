@@ -15,8 +15,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "prepublishOnly": "npm run build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "prepare": "husky"
+    "build-storybook": "storybook build"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -42,10 +41,8 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-storybook": "^0.6.15",
     "glob": "^10.3.10",
-    "husky": "^9.0.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "release-please": "^16.9.0",
     "storybook": "^7.6.16",
     "typescript": "^5.2.2",
     "vite": "^5.1.0",
