@@ -1,1 +1,1 @@
-npx release-please
+npx release-please release-pr --token=$GITHUB_TOKEN
