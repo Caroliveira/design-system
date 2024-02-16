@@ -15,13 +15,13 @@ minorBump=false
 patchBump=false
 
 # Analyze commits since the last tag
-for commit in $(git log $latestTag..HEAD --oneline); do
-    if [[ $commit == *"major"* ]]; then
+git log $latestTag..HEAD --oneline | while read line; do
+    if [[ "$line" == *"major"* ]]; then
         majorBump=true
-        break # Major bump overrides other bumps
-    elif [[ $commit == *"feat"* ]]; then
+        # Break is not effective in a pipe, as it runs in a subshell
+    elif [[ "$line" == *"feat"* ]] && [ "$majorBump" != true ]; then
         minorBump=true
-    elif [[ $commit == *"fix"* ]]; then
+    elif [[ "$line" == *"fix"* ]] && [ "$majorBump" != true ] && [ "$minorBump" != true ]; then
         patchBump=true
     fi
 done
