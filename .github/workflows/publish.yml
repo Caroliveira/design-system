@@ -19,6 +19,7 @@ jobs:
         id: release
         with:
           release-type: node
+          token: ${{ secrets.GITHUB_TOKEN }}
 
   npm-publish:
     runs-on: ubuntu-latest
