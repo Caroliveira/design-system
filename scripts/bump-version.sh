@@ -38,9 +38,16 @@ else
     exit 0
 fi
 
+# Check if the working directory is clean
+if [ -n "$(git status --porcelain)" ]; then
+    echo "Uncommitted changes detected. Committing them before version bump..."
+    git add .
+    git commit -m "chore: prep for version bump"
+fi
+
 # Bump version
 echo "Performing a $versionBump version bump"
 npm version $versionBump -m "chore(release): %s"
 
 # Push changes
-git push --follow-tags
+git push origin HEAD --tags
