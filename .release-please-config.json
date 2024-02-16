@@ -1,0 +1,8 @@
+{
+    "branches": [
+        "main"
+    ],
+    "bumpMinorPreMajor": true,
+    "packageName": "@linaoliveira/design-system",
+    "versionFile": "package.json"
+}
