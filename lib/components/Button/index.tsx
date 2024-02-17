@@ -1,51 +1,40 @@
-import styles from "./button.module.css";
+import { ButtonHTMLAttributes } from "react";
+import styles from "./Button.module.css";
 
-interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
+type ButtonProps = {
+  color?: "primary" | "secondary" | "success" | "error" | "info" | "warning";
+  variant?: "contained" | "outlined" | "text";
   size?: "small" | "medium" | "large";
-  /**
-   * Button contents
-   */
-  label: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
-}
+  fullWidth?: boolean;
+  disabled?: boolean;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 /**
- * Primary UI component for user interaction
+ * The `Button` component is used to trigger actions or navigate through the application. It supports multiple sizes, colors, and variants to fit different UI contexts. Besides the custom props you will see here, it also accepts any other button default props.
  */
 export const Button = ({
-  primary = false,
+  children,
+  fullWidth,
   size = "medium",
-  backgroundColor,
-  label,
+  color = "primary",
+  variant = "contained",
+  className,
+  type = "button",
+  disabled,
   ...props
 }: ButtonProps) => {
-  const mode = styles[`storybook-button--${primary ? "primary" : "secondary"}`];
+  const buttonClass = [
+    styles.button,
+    fullWidth ? styles[`button--fullWidth`] : "",
+    styles[`button--${variant}`],
+    styles[`button--${color}`],
+    styles[`button--${size}`],
+    className,
+  ].join(" ");
+
   return (
-    <button
-      type="button"
-      className={[
-        styles["storybook-button"],
-        styles[`storybook-button--${size}`],
-        mode,
-      ].join(" ")}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
+    <button type={type} className={buttonClass} disabled={disabled} {...props}>
+      {children}
     </button>
   );
 };

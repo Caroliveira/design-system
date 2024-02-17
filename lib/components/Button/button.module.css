@@ -1,30 +1,83 @@
-.storybook-button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  border: 0;
-  border-radius: 3em;
+.button {
+  border: none;
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
   cursor: pointer;
-  display: inline-block;
-  line-height: 1;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  width: fit-content;
+  border-radius: 50px;
 }
-.storybook-button--primary {
-  color: white;
-  background-color: #1ea7fd;
+
+.button:hover {
+  box-shadow: 0 4px 8px var(--secondary-background-color);
 }
-.storybook-button--secondary {
-  color: #333;
-  background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+
+.button:disabled {
+  --button-color: var(--light-accent-color);
+  cursor: auto;
 }
-.storybook-button--small {
+
+.button:disabled:hover {
+  box-shadow: none;
+  opacity: 0.8;
+}
+
+.button--fullWidth {
+  width: 100%;
+}
+
+.button--small {
+  padding: 4px 12px;
   font-size: 12px;
-  padding: 10px 16px;
 }
-.storybook-button--medium {
-  font-size: 14px;
-  padding: 11px 20px;
-}
-.storybook-button--large {
+
+.button--medium {
+  padding: 6px 18px;
   font-size: 16px;
-  padding: 12px 24px;
+}
+
+.button--large {
+  padding: 8px 22px;
+  font-size: 20px;
+}
+
+.button--contained {
+  --button-text-color: var(--light-shades-color);
+  --button-background-color: var(--button-color);
+}
+
+.button--outlined {
+  --button-text-color: var(--primary-text-color);
+  --button-background-color: transparent;
+  border: 2px solid var(--button-color);
+}
+
+.button--text {
+  --button-text-color: var(--button-color);
+  --button-background-color: transparent;
+}
+
+.button--primary {
+  --button-color: var(--brand-color);
+}
+
+.button--secondary {
+  --button-color: var(--brand-accent-color);
+}
+
+.button--success {
+  --button-color: var(--success-color);
+}
+
+.button--error {
+  --button-color: var(--danger-color);
+}
+
+.button--info {
+  --button-color: var(--dark-accent-color);
+}
+
+.button--warning {
+  --button-color: var(--warning-color);
 }

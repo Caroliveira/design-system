@@ -1,3 +1,5 @@
+export const disableStorybookArg = { table: { disable: true } };
+
 export const defaultColors = {
   lightShades: "#EBE9E5",
   lightAccent: "#858486",
