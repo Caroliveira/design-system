@@ -1,7 +1,7 @@
 import type { Preview } from "@storybook/react";
 import React from "react";
 import { ThemeProvider } from "../lib/context/ThemeContext";
-import TemplateDocs from "../lib/docs/Template.docs.mdx";
+import TemplateDocs from "../lib/stories/template.mdx";
 
 const preview: Preview = {
   decorators: [

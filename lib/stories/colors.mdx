@@ -1,0 +1,58 @@
+import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
+import { defaultColors } from "../utils/constants";
+
+<Meta title="System/Colors" />
+
+# Colors
+
+Our color system can be customized using the `ThemeContext` and passed as color parameters. To utilize these colors in your application, reference them as the CSS variable names you are seeing bellow like so: `var(--variable-name-color);`
+
+<ColorPalette>
+  <ColorItem
+    title="Brand Colors"
+    subtitle="The identity of our brand. Apply these colors liberally to your layout."
+    colors={{
+      "--brand-color": defaultColors.brandColor,
+      "--brand-accent-color": defaultColors.brandAccent,
+    }}
+  />
+  <ColorItem
+    title="Greyscale"
+    subtitle="Ideal for backgrounds and text. Ensure contrast ratios meet accessibility standards."
+    colors={{
+      "--light-shades-color": defaultColors.lightShades,
+      "--light-accent-color": defaultColors.lightAccent,
+      "--dark-accent-color": defaultColors.darkAccent,
+      "--dark-shades-color": defaultColors.darkShades,
+    }}
+  />
+  <ColorItem
+    title="Semantic Colors"
+    subtitle="Contain semantic information and should be used consistently across the application."
+    colors={{
+      "--success-color": defaultColors.success,
+      "--warning-color": defaultColors.warning,
+      "--danger-color": defaultColors.danger,
+    }}
+  />
+</ColorPalette>
+
+## Theme
+
+Our theming system is designed to automatically switch themes based on the CSS variables used. By incorporating the variables listed below, themes will adjust dynamically to match user preferences or system settings. This seamless transition ensures a consistent and accessible user experience across light and dark modes without manual intervention.
+
+```
+body.dark {
+  --primary-background-color: var(--dark-shades-color);
+  --secondary-background-color: var(--dark-accent-color);
+  --primary-text-color: var(--light-shades-color);
+  --secondary-text-color: var(--light-accent-color);
+}
+
+body.light {
+  --primary-background-color: var(--light-shades-color);
+  --secondary-background-color: var(--light-accent-color);
+  --primary-text-color: var(--dark-shades-color);
+  --secondary-text-color: var(--dark-accent-color);
+}
+```
