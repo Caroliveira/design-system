@@ -2,12 +2,12 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { disableStorybookArg } from "../../utils/constants";
 import { Button } from ".";
 
-const meta = {
+const meta: Meta<typeof Button> = {
   component: Button,
   tags: ["autodocs"],
   args: { style: { marginRight: 8 } },
   argTypes: { style: disableStorybookArg },
-} satisfies Meta<typeof Button>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
