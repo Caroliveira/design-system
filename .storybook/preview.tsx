@@ -1,11 +1,12 @@
 import type { Preview } from "@storybook/react";
 import React from "react";
 import { ThemeProvider } from "../lib/context/ThemeContext";
+import TemplateDocs from "../lib/docs/Template.docs.mdx";
 
 const preview: Preview = {
   decorators: [
     (Story) => (
-      <ThemeProvider>
+      <ThemeProvider fixedTheme="light">
         <Story />
       </ThemeProvider>
     ),
@@ -18,6 +19,7 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    docs: { page: TemplateDocs },
   },
 };
 

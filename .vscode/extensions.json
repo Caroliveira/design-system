@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint", // For ESLint integration
+    "esbenp.prettier-vscode", // For Prettier formatting
+    "unifiedjs.vscode-mdx", // For MDX support
+    "EditorConfig.EditorConfig" // For EditorConfig support
+  ]
+}

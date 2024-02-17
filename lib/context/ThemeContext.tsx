@@ -17,19 +17,24 @@ export const ThemeContext = createContext(defaultThemeContext);
 type ThemeProviderProps = {
   children: ReactNode;
   colors?: Partial<typeof defaultColors>;
+  fixedTheme?: "dark" | "light";
 };
 
 export const ThemeProvider = ({
   children,
   colors = {},
+  fixedTheme,
 }: ThemeProviderProps) => {
   const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
-    const savedTheme = localStorage.getItem("design_system_theme");
-    setTheme(savedTheme ? savedTheme : systemTheme.media);
-  }, []);
+    if (fixedTheme) setTheme(fixedTheme);
+    else {
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+      const savedTheme = localStorage.getItem("design_system_theme");
+      setTheme(savedTheme ? savedTheme : systemTheme.media);
+    }
+  }, [fixedTheme]);
 
   useEffect(() => {
     const docStyle = document.documentElement.style;

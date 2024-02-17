@@ -7,5 +7,5 @@ export const defaultColors = {
   darkShades: "#242424",
   success: "#6A8E43",
   warning: "#E87E0B",
-  danger: "#F44336",
+  danger: "#C20D00",
 };
