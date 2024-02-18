@@ -1,10 +1,7 @@
 .button {
-  border: none;
   background-color: var(--button-background-color);
   color: var(--button-text-color);
   cursor: pointer;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
   width: fit-content;
   border-radius: 50px;
 }

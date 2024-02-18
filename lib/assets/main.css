@@ -1,8 +1,31 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 500;
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
 body.dark {
   --primary-background-color: var(--dark-shades-color);
   --secondary-background-color: var(--dark-accent-color);
   --primary-text-color: var(--light-shades-color);
   --secondary-text-color: var(--light-accent-color);
+  --link-color: var(--brand-accent-color);
+  --link-hover-color: var(--brand-color);
 }
 
 body.light {
@@ -10,4 +33,35 @@ body.light {
   --secondary-background-color: var(--light-accent-color);
   --primary-text-color: var(--dark-shades-color);
   --secondary-text-color: var(--dark-accent-color);
+  --link-color: var(--brand-color);
+  --link-hover-color: var(--brand-accent-color);
+}
+
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+button {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  border: none;
+  line-height: 1.5;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
