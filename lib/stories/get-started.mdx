@@ -1,0 +1,102 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Get Started" />
+
+# Welcome to Lina's Design System
+
+## Introduction
+
+Welcome to Lina's DS, a small toolkit designed to help Lina's projects and empower developers to build visually cohesive and accessible web experiences with ease. The system is built with flexibility in mind, featuring a dynamic theming engine that adapts to your users' preferences, ensuring a consistent experience across light and dark modes.
+
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Customizing Theme Colors](#customizing-theme-colors)
+  - [Disable Theme Changes](#disable-theme-changes)
+- [Examples](#examples)
+- [Support and Resources](#support-and-resources)
+
+---
+
+## Prerequisites
+
+Before you dive in, ensure you have the following:
+
+- Basic knowledge of HTML and CSS.
+- An awesome React project that might need our help.
+
+Note: We also have TypeScript support!
+
+## Installation
+
+Add the Design System to Your Project:
+
+```bash
+    npm install @linaoliveira/design-system
+```
+
+or
+
+```bash
+    yarn add @linaoliveira/design-system
+```
+
+## Usage
+
+To enable it, wrap your application in the Theme Provider provided by our design system. This ensures that any changes to the theme colors are reflected throughout your application automatically. In your main JavaScript (or TypeScript) file, import the design system:
+
+```js
+import { ThemeProvider } from "@linaoliveira/design-system";
+
+const App = () => {
+  return (
+    <ThemeProvider>
+      {/* Your application components, pages or routes go here */}
+    </ThemeProvider>
+  );
+};
+```
+
+### Customizing Theme Colors
+
+Customize the theme by setting your desired colors in the Theme Context. Here's how to change the brand colors:
+
+```js
+const App = () => {
+  return (
+    <ThemeProvider colors={{ brandColor: "#AD4022", brandAccent: "#C37846" }}>
+      {/* Your application components, pages or routes go here */}
+    </ThemeProvider>
+  );
+};
+```
+
+**Note:** Any colors not listed in your changes will remain the same.
+
+### Disable Theme Changes
+
+If you don't care about theme changes you need to specify the default theme you are using or the context might change colors accordingly with your user theme settings. To disable it, do the following:
+
+```js
+const App = () => {
+  return (
+    <ThemeProvider fixedTheme="light">
+      {/* Your application components, pages or routes go here */}
+    </ThemeProvider>
+  );
+};
+```
+
+**Note:** Any colors not listed in your changes will remain the same.
+
+## Examples
+
+For practical examples of how to implement and customize the design system, you can check [lina's portfolio code](https://github.com/Caroliveira/caroliveira.github.io) where is using the existing components. For more example on how to disable themes and change colors, they are still to come.
+
+## Support and Resources
+
+Need help or have questions? Our documentation offers some guides and playgrounds, feel free to try it all.
+
+For further assistance, send a question or feedback to linaribeirooliveira@gmail.com.
