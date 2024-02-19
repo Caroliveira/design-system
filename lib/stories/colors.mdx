@@ -39,7 +39,9 @@ Our color system can be customized using the `ThemeContext` and passed as color 
 
 ## Theme
 
-Our theming system is designed to automatically switch themes based on the CSS variables used. By incorporating the variables listed below, themes will adjust dynamically to match user preferences or system settings. This seamless transition ensures a consistent and accessible user experience across light and dark modes without manual intervention.
+Our theming system is designed to facilitate automatic theme transitions, leveraging CSS variables to adapt to user preferences or system settings seamlessly. This dynamic adaptation ensures a uniform and accessible user experience across both light and dark modes, eliminating the need for manual adjustments.
+
+Below, we detail the methodology our design system employs to define these variables. Modifying the colors within the `Theme Context` initiates an automatic update of the theme colors listed below to reflect your customizations.
 
 ```
 body.dark {
@@ -47,12 +49,21 @@ body.dark {
   --secondary-background-color: var(--dark-accent-color);
   --primary-text-color: var(--light-shades-color);
   --secondary-text-color: var(--light-accent-color);
+  --link-color: var(--brand-accent-color);
+  --link-hover-color: var(--brand-color);
 }
 
 body.light {
-  --primary-background-color: var(--light-shades-color);
-  --secondary-background-color: var(--light-accent-color);
-  --primary-text-color: var(--dark-shades-color);
-  --secondary-text-color: var(--dark-accent-color);
+--primary-background-color: var(--light-shades-color);
+--secondary-background-color: var(--light-accent-color);
+--primary-text-color: var(--dark-shades-color);
+--secondary-text-color: var(--dark-accent-color);
+--link-color: var(--brand-color);
+--link-hover-color: var(--brand-accent-color);
 }
+
+```
+
+```
+
 ```
