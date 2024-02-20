@@ -30,9 +30,10 @@ export const ThemeProvider = ({
   useEffect(() => {
     if (fixedTheme) setTheme(fixedTheme);
     else {
-      const systemTheme = window.matchMedia("(prefers-color-scheme:dark)");
+      const darkSystem = window.matchMedia("(prefers-color-scheme: dark)");
+      const isSystemDark = darkSystem.matches;
       const savedTheme = localStorage.getItem("design_system_theme");
-      setTheme(savedTheme ? savedTheme : systemTheme.media);
+      setTheme(savedTheme ? savedTheme : isSystemDark ? "dark" : "light");
     }
   }, [fixedTheme]);
 
