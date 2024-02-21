@@ -3,67 +3,88 @@ import { defaultColors } from "../utils/constants";
 
 <Meta title="System/Colors" />
 
-# Colors
+# Colors Documentation
 
-Our color system can be customized using the `ThemeContext` and passed as color parameters. To utilize these colors in your application, reference them as the CSS variable names you are seeing bellow like so: `var(--variable-name-color);`
+This documentation is crafted to guide you through our default color scheme, providing insights into our choices and how these colors can be applied to create harmonious, accessible, and aesthetically pleasing designs. Here, you'll find a detailed overview of each color, including their meanings, usage guidelines, and technical specifications like HEX codes and CSS variable names.
+
+Our color palette has been designed with accessibility in mind, ensuring that our products are usable by everyone, regardless of their visual abilities. We emphasize contrast, legibility, and color harmony, making sure that our designs are not only beautiful but inclusive.
+
+## Brand Colors
+
+Our brand color strikes a balance between energizing warmth and earthy stability. It inspires confidence and assurance, fostering an environment where creativity and reliability thrive. This color resonates with the strength and endurance of the earth, embodying our dedication to building lasting relationships and dependable solutions.
 
 <ColorPalette>
   <ColorItem
-    title="Brand Colors"
-    subtitle="The identity of our brand. Apply these colors liberally to your layout."
-    colors={{
-      "--brand-color": defaultColors.brandColor,
-      "--brand-accent-color": defaultColors.brandAccent,
-    }}
+    title="Brand Color"
+    subtitle="Apply this color liberally to your layout; optimized for light themes."
+    colors={{ "--brand-color": defaultColors.brandColor }}
   />
   <ColorItem
-    title="Greyscale"
-    subtitle="Ideal for backgrounds and text. Ensure contrast ratios meet accessibility standards."
-    colors={{
-      "--light-shades-color": defaultColors.lightShades,
-      "--light-accent-color": defaultColors.lightAccent,
-      "--dark-accent-color": defaultColors.darkAccent,
-      "--dark-shades-color": defaultColors.darkShades,
-    }}
-  />
-  <ColorItem
-    title="Semantic Colors"
-    subtitle="Contain semantic information and should be used consistently across the application."
-    colors={{
-      "--success-color": defaultColors.success,
-      "--warning-color": defaultColors.warning,
-      "--danger-color": defaultColors.danger,
-    }}
+    title="Brand Accent Color"
+    subtitle="A variation of the brand color for enhanced visibility on dark themes."
+    colors={{ "--brand-accent-color": defaultColors.brandAccent }}
   />
 </ColorPalette>
 
-## Theme
+## Grayscale
 
-Our theming system is designed to facilitate automatic theme transitions, leveraging CSS variables to adapt to user preferences or system settings seamlessly. This dynamic adaptation ensures a uniform and accessible user experience across both light and dark modes, eliminating the need for manual adjustments.
+Our grayscale palette is designed to support a wide range of design needs, ensuring flexibility and accessibility in every application. From the lightest shades to the deepest darks, these colors provide the necessary contrast and hierarchy essential for creating clear, legible, and sophisticated designs. Whether used for typography, backgrounds, or UI elements, our grayscale colors are fundamental to achieving balance and refinement in our visual language.
 
-Below, we detail the methodology our design system employs to define these variables. Modifying the colors within the `Theme Context` initiates an automatic update of the theme colors listed below to reflect your customizations.
+<ColorPalette>
+  <ColorItem
+    title="Light Shades Color"
+    subtitle="Ideal for backgrounds in dark-on-light designs or as text color in inverted designs."
+    colors={{ "--light-shades-color": defaultColors.lightShades }}
+  />
+  <ColorItem
+    title="Light Accent Color"
+    subtitle="A secondary option to light shades, adding variety and depth."
+    colors={{ "--light-accent-color": defaultColors.lightAccent }}
+  />
+  <ColorItem
+    title="Dark Shades Color"
+    subtitle="For text in dark-on-light designs or as backgrounds in inverted designs."
+    colors={{ "--dark-shades-color": defaultColors.darkShades }}
+  />
+  <ColorItem
+    title="Dark Accent Color"
+    subtitle="Serves as a secondary option to dark shades, enhancing contrast."
+    colors={{ "--dark-accent-color": defaultColors.darkAccent }}
+  />
+</ColorPalette>
 
-```
-body.dark {
-  --primary-background-color: var(--dark-shades-color);
-  --secondary-background-color: var(--dark-accent-color);
-  --primary-text-color: var(--light-shades-color);
-  --secondary-text-color: var(--light-accent-color);
-  --link-color: var(--brand-accent-color);
-  --link-hover-color: var(--brand-color);
-}
+## Semantic Colors
 
-body.light {
---primary-background-color: var(--light-shades-color);
---secondary-background-color: var(--light-accent-color);
---primary-text-color: var(--dark-shades-color);
---secondary-text-color: var(--dark-accent-color);
---link-color: var(--brand-color);
---link-hover-color: var(--brand-accent-color);
-}
+Our semantic colors play a critical role in user interface design, providing immediate visual cues to users about the nature of their interactions and the state of the system. These colors are designed to be universally recognizable, ensuring that our products communicate effectively with users across various contexts. By leveraging these colors, we can guide user behavior, highlight important actions, and convey feedback with clarity and precision.
 
-```
+<ColorPalette>
+  <ColorItem
+    title="Success Color"
+    subtitle="Indicates successful or positive actions."
+    colors={{ "--success-color": defaultColors.success }}
+  />
+  <ColorItem
+    title="Warning Color"
+    subtitle="Highlights warnings or actions requiring caution."
+    colors={{ "--warning-color": defaultColors.warning }}
+  />
+  <ColorItem
+    title="Danger Color"
+    subtitle="Signifies errors, dangers, or critical actions."
+    colors={{ "--danger-color": defaultColors.danger }}
+  />
+</ColorPalette>
 
-```
+# Customizing Colors with Our Theme Provider
 
-```
+Our design system is built with flexibility in mind, allowing for the customization of colors to fit a wide range of branding and aesthetic preferences. Through our `Theme Provider`, users can easily adapt the default color scheme to align with their unique brand identity, ensuring consistency and coherence across designs.
+
+To customize the color palette, including brand colors, grayscale, and semantic colors, refer to our theme provider documentation. The theme provider offers a straightforward way to apply custom colors across your application, ensuring that your design remains consistent with your brand's visual identity.
+
+## Simplifying Theme Customization with CSS Variables
+
+In addition to direct color customization, our design system simplifies theme adaptation through predefined CSS variables. These variables, such as `--primary-background-color`, `--secondary-background-color`, `--primary-text-color`, and others, automatically adjust according to the selected theme (light or dark). This setup aligns with the usage guidelines outlined for our color palette, ensuring that applications automatically adapt to theme changes with minimal effort.
+
+By incorporating these variables in your CSS, your application's appearance will seamlessly transition between themes, maintaining both consistency and accessibility. This dynamic theming capability empowers developers to create flexible, visually appealing applications that align with both user preferences and brand identity.
+
+For detailed instructions on implementing theme changes, utilizing CSS variables for dynamic theming, and customizing colors within our design system, please see our [Theme Documentation](?path=/docs/system-theme--docs).
