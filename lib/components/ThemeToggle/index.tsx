@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { ThemeContext } from "../../context/ThemeContext";
+import { useTheme } from "../../context/ThemeContext";
 import styles from "./ThemeToggle.module.css";
 
 export type ThemeToggleProps = {
@@ -11,7 +10,7 @@ export const ThemeToggle = ({
   enableDarkThemeLabel = "Enable dark theme",
   enableLightThemeLabel = "Enable light theme",
 }: ThemeToggleProps) => {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, setTheme } = useTheme();
   const isDarkMode = theme === "dark";
 
   return (

@@ -1,20 +1,9 @@
-import { useState, useEffect, ReactNode, createContext } from "react";
+import { useState, useEffect, ReactNode } from "react";
 import { defaultColors } from "../utils/constants";
+import { ThemeContext } from "./ThemeContext";
 import "../assets/main.css";
 
-type ThemeContextType = {
-  setTheme: (theme: string) => void;
-  theme: string;
-};
-
-const defaultThemeContext: ThemeContextType = {
-  setTheme: () => null,
-  theme: "dark",
-};
-
-export const ThemeContext = createContext(defaultThemeContext);
-
-type ThemeProviderProps = {
+export type ThemeProviderProps = {
   children: ReactNode;
   colors?: Partial<typeof defaultColors>;
   fixedTheme?: "dark" | "light";
