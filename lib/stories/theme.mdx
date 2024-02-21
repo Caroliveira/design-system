@@ -1,0 +1,104 @@
+import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
+import { defaultColors } from "../utils/constants";
+
+<Meta title="System/Theme" />
+
+# Theme Documentation
+
+Our design system's theming capabilities are designed to effortlessly facilitate automatic theme transitions between light and dark modes, accommodating user preferences or system settings to ensure a consistent, accessible user experience. This guide will walk you through the essentials of applying, customizing, and managing themes within your applications.
+
+## Usage
+
+To fully utilize the theming capabilities of our design system, it's essential to wrap your application with the `ThemeProvider`. This step is crucial not only for ensuring that theme changes are consistently applied throughout your application but also for the proper functioning of the library's components. By integrating the `ThemeProvider` at the root of your application, you enable dynamic theming across all components, promoting a cohesive and adaptable user interface.
+
+### Basic Theme Application
+
+```js
+import { ThemeProvider } from "@linaoliveira/design-system";
+
+const App = () => {
+  return (
+    <ThemeProvider>
+      {/* Your application components, pages or routes go here */}
+    </ThemeProvider>
+  );
+};
+```
+
+### Customizing Theme Colors
+
+Customize your application's theme by specifying your desired colors. This allows you to personalize the appearance to match your brand identity.
+
+```js
+const App = () => {
+  return (
+    <ThemeProvider colors={{ brandColor: "#AD4022", brandAccent: "#C37846" }}>
+      {/* Your application components, pages or routes go here */}
+    </ThemeProvider>
+  );
+};
+```
+
+**Note:** Unspecified colors will default to the design system's predefined settings.
+
+## Automatic Theme Adaptation
+
+Our design system employs CSS variables for dynamic theme adaptation, allowing themes to automatically adjust to the user's preferred settings. This feature promotes visual consistency across different environments without requiring manual adjustments.
+
+### CSS Variables for Theme Adaptation
+
+```css
+body.dark {
+  --primary-background-color: var(--dark-shades-color);
+  --secondary-background-color: var(--dark-accent-color);
+  --primary-text-color: var(--light-shades-color);
+  --secondary-text-color: var(--light-accent-color);
+  --link-color: var(--brand-accent-color);
+  --link-hover-color: var(--brand-color);
+}
+
+body.light {
+  --primary-background-color: var(--light-shades-color);
+  --secondary-background-color: var(--light-accent-color);
+  --primary-text-color: var(--dark-shades-color);
+  --secondary-text-color: var(--dark-accent-color);
+  --link-color: var(--brand-color);
+  --link-hover-color: var(--brand-accent-color);
+}
+```
+
+## Changing Theme
+
+### Manual Theme Switching
+
+For custom theme-switching mechanisms our design system offers the `useTheme` hook. This enables programmable theme adjustments directly within your components, offering flexibility beyond the provided [ThemeToggle component](?path=/docs/components-themetoggle--docs).
+
+By using useTheme, you can programmatically switch between themes based on user interactions or other conditions. Here's an example demonstrating how to toggle between light and dark modes:
+
+```js
+import { useTheme } from "@linaoliveira/design-system";
+
+const ThemeSwitcher = () => {
+  const { theme, setTheme } = useTheme();
+
+  return (
+    <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+      Switch to {theme === "light" ? "Dark" : "Light"} Mode
+    </button>
+  );
+};
+```
+
+### Fixed Theme Application
+
+To maintain a consistent theme appearance, irrespective of system preferences, explicitly set a fixed theme within the ThemeProvider.
+
+```js
+const App = () => {
+  return (
+    <ThemeProvider fixedTheme="light">
+      {/* Your application components, pages or routes go here */}
+    </ThemeProvider>
+  );
+};
+```
