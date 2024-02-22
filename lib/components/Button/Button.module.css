@@ -46,7 +46,7 @@
 
 .button--outlined {
   --button-text-color: var(--primary-text-color);
-  --button-background-color: transparent;
+  --button-background-color: var(--primary-background-color);
   border: 2px solid var(--button-color);
 }
 
