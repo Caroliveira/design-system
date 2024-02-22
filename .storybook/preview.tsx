@@ -6,13 +6,14 @@ import TemplateDocs from "../lib/stories/template.mdx";
 const preview: Preview = {
   decorators: [
     (Story) => (
-      <ThemeProvider fixedTheme="light">
+      <ThemeProvider fixedTheme="dark">
         <Story />
       </ThemeProvider>
     ),
   ],
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
+    backgrounds: { default: "dark", disable: true },
     controls: {
       matchers: {
         color: /(background|color)$/i,
