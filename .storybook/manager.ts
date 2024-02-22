@@ -6,7 +6,6 @@ addons.setConfig({
   theme: create({
     base: "dark",
     brandTitle: "Lina's Design System",
-    brandUrl: "https://caroliveira.github.io/",
     brandImage: "/lina-ds-logo.png",
 
     colorPrimary: defaultColors.brandColor,
