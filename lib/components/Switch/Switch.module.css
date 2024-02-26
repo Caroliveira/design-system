@@ -1,0 +1,41 @@
+.switch {
+  display: flex;
+  height: 26px;
+  position: relative;
+  width: 44px;
+}
+
+.switch__slider {
+  background-color: var(--light-accent-color);
+  border-radius: 50px;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .switch__slider {
+  background-color: var(--brand-color);
+}
+
+.switch__slider:before {
+  background-color: var(--dark-accent-color);
+  border-radius: 50px;
+  bottom: 4px;
+  content: "";
+  height: 18px;
+  left: 4px;
+  position: absolute;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  width: 18px;
+}
+
+input:checked + .switch__slider:before {
+  background-color: var(--light-accent-color);
+  transform: translateX(18px);
+}

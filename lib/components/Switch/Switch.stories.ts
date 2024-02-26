@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ThemeToggle } from ".";
+import { Switch } from ".";
 
-const meta: Meta<typeof ThemeToggle> = {
-  component: ThemeToggle,
+const meta: Meta<typeof Switch> = {
+  component: Switch,
   parameters: { layout: "centered" },
   tags: ["autodocs"],
 };

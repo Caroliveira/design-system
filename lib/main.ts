@@ -1,8 +1,8 @@
 export type { ButtonProps } from "./components/Button";
 export { Button } from "./components/Button";
 
-export type { ThemeToggleProps } from "./components/ThemeToggle";
-export { ThemeToggle } from "./components/ThemeToggle";
+export type { SwitchProps } from "./components/Switch";
+export { Switch } from "./components/Switch";
 
 export type { ThemeProviderProps } from "./context/ThemeProvider";
 export { ThemeProvider } from "./context/ThemeProvider";

@@ -1,5 +1,4 @@
 import { createContext, useContext } from "react";
-import "../assets/main.css";
 
 type ThemeContextType = {
   setTheme: (theme: string) => void;
