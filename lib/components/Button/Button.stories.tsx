@@ -1,12 +1,27 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { disableStorybookArg } from "../../utils/constants";
-import { Button } from ".";
+import { Button, ButtonProps } from ".";
+
+const defaultParams: ButtonProps = {
+  color: "primary",
+  variant: "contained",
+  size: "medium",
+  fullWidth: false,
+  disabled: false,
+};
 
 const meta: Meta<typeof Button> = {
   component: Button,
   tags: ["autodocs"],
-  args: { style: { marginRight: 8 } },
-  argTypes: { style: disableStorybookArg },
+  args: {
+    style: { margin: 8 },
+    ...defaultParams,
+  },
+  argTypes: {
+    style: disableStorybookArg,
+    variant: { control: "select" },
+    size: { control: "select" },
+  },
 };
 
 export default meta;
@@ -20,22 +35,22 @@ export const Colors: Story = {
   argTypes: { color: disableStorybookArg },
   render: (arg) => (
     <>
-      <Button color="primary" {...arg}>
+      <Button {...arg} color="primary">
         Primary
       </Button>
-      <Button color="secondary" {...arg}>
+      <Button {...arg} color="secondary">
         Secondary
       </Button>
-      <Button color="success" {...arg}>
+      <Button {...arg} color="success">
         Success
       </Button>
-      <Button color="error" {...arg}>
+      <Button {...arg} color="error">
         Error
       </Button>
-      <Button color="warning" {...arg}>
+      <Button {...arg} color="warning">
         Warning
       </Button>
-      <Button color="info" {...arg}>
+      <Button {...arg} color="info">
         Info
       </Button>
     </>
@@ -46,13 +61,13 @@ export const Variants: Story = {
   argTypes: { variant: disableStorybookArg },
   render: (arg) => (
     <>
-      <Button variant="contained" {...arg}>
+      <Button {...arg} variant="contained">
         Contained
       </Button>
-      <Button variant="outlined" {...arg}>
+      <Button {...arg} variant="outlined">
         Outlined
       </Button>
-      <Button variant="text" {...arg}>
+      <Button {...arg} variant="text">
         Text
       </Button>
     </>
@@ -63,13 +78,13 @@ export const Sizes: Story = {
   argTypes: { size: disableStorybookArg },
   render: (arg) => (
     <>
-      <Button size="large" {...arg}>
+      <Button {...arg} size="large">
         Large
       </Button>
-      <Button size="medium" {...arg}>
+      <Button {...arg} size="medium">
         Medium
       </Button>
-      <Button size="small" {...arg}>
+      <Button {...arg} size="small">
         Small
       </Button>
     </>
@@ -80,13 +95,13 @@ export const Disabled: Story = {
   argTypes: { disabled: disableStorybookArg },
   render: (arg) => (
     <>
-      <Button disabled variant="contained" {...arg}>
+      <Button {...arg} disabled variant="contained">
         Disabled Contained
       </Button>
-      <Button disabled variant="outlined" {...arg}>
+      <Button {...arg} disabled variant="outlined">
         Disabled Outlined
       </Button>
-      <Button disabled variant="text" {...arg}>
+      <Button {...arg} disabled variant="text">
         Disabled Text
       </Button>
     </>

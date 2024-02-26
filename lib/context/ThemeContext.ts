@@ -12,6 +12,7 @@ const defaultThemeContext: ThemeContextType = {
 };
 
 export const ThemeContext = createContext(defaultThemeContext);
+ThemeContext.displayName = "ThemeContext";
 
 export const useTheme = () => {
   const context = useContext(ThemeContext);
