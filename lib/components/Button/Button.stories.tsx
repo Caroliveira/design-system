@@ -1,24 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { Button } from ".";
 import { disableStorybookArg } from "../../utils/constants";
-import { Button, ButtonProps } from ".";
-
-const defaultParams: ButtonProps = {
-  color: "primary",
-  variant: "contained",
-  size: "medium",
-  fullWidth: false,
-  disabled: false,
-};
 
 const meta: Meta<typeof Button> = {
   component: Button,
   tags: ["autodocs"],
   args: {
-    style: { margin: 8 },
-    ...defaultParams,
+    color: "primary",
+    variant: "contained",
+    size: "medium",
+    fullWidth: false,
+    disabled: false,
   },
   argTypes: {
-    style: disableStorybookArg,
     variant: { control: "select" },
     size: { control: "select" },
   },

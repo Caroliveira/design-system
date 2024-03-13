@@ -1,8 +1,9 @@
 import { ButtonHTMLAttributes } from "react";
+import { ColorType } from "../../utils/types";
 import styles from "./Button.module.css";
 
 export type ButtonProps = {
-  color?: "primary" | "secondary" | "success" | "error" | "info" | "warning";
+  color: ColorType;
   variant?: "contained" | "outlined" | "text";
   size?: "small" | "medium" | "large";
   fullWidth?: boolean;

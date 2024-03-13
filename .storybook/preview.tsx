@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useTheme } from "../lib/context/ThemeContext";
 import { ThemeProvider } from "../lib/context/ThemeProvider";
 import TemplateDocs from "../lib/stories/template.mdx";
+import { disableStorybookArg } from "../lib/utils/constants";
 
 const withThemeProvider = (Story) => (
   <ThemeProvider>
@@ -22,6 +23,8 @@ const withThemeContext = (Story, context) => {
 };
 
 const preview: Preview = {
+  args: { style: { margin: 8 } },
+  argTypes: { style: disableStorybookArg },
   decorators: [withThemeContext, withThemeProvider],
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },

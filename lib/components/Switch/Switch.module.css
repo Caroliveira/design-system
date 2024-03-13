@@ -1,8 +1,32 @@
 .switch {
-  display: flex;
+  display: inline-flex;
   height: 26px;
   position: relative;
   width: 44px;
+}
+
+.switch--primary {
+  --switch-color: var(--brand-color);
+}
+
+.switch--secondary {
+  --switch-color: var(--brand-accent-color);
+}
+
+.switch--success {
+  --switch-color: var(--success-color);
+}
+
+.switch--error {
+  --switch-color: var(--danger-color);
+}
+
+.switch--info {
+  --switch-color: var(--dark-shades-color);
+}
+
+.switch--warning {
+  --switch-color: var(--warning-color);
 }
 
 .switch__slider {
@@ -18,10 +42,6 @@
   transition: 0.4s;
 }
 
-input:checked + .switch__slider {
-  background-color: var(--brand-color);
-}
-
 .switch__slider:before {
   background-color: var(--dark-accent-color);
   border-radius: 50px;
@@ -35,7 +55,24 @@ input:checked + .switch__slider {
   width: 18px;
 }
 
-input:checked + .switch__slider:before {
-  background-color: var(--light-accent-color);
+.switch__input {
+  visibility: hidden;
+}
+
+.switch__input:checked + .switch__slider {
+  background-color: var(--switch-color);
+}
+
+.switch__input:checked + .switch__slider:before {
+  background-color: var(--light-shades-color);
   transform: translateX(18px);
+}
+
+.switch__input:disabled + .switch__slider {
+  opacity: 0.8;
+  cursor: default;
+}
+
+.switch__input:disabled + .switch__slider:hover {
+  opacity: 0.5;
 }
