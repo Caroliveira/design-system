@@ -1,11 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Switch } from ".";
 import { disableStorybookArg } from "../../utils/constants";
+import sun from "../../assets/sun.svg";
+import moon from "../../assets/moon.svg";
+import { Switch } from ".";
 
 const meta: Meta<typeof Switch> = {
   component: Switch,
   tags: ["autodocs"],
   args: { color: "primary", disabled: false, defaultChecked: true },
+  argTypes: { onIcon: disableStorybookArg, offIcon: disableStorybookArg },
 };
 
 export default meta;
@@ -37,4 +40,8 @@ export const Disabled: Story = {
       <Switch {...arg} aria-label="Disabled switch" disabled />
     </>
   ),
+};
+
+export const WithIcon: Story = {
+  args: { onIcon: sun, offIcon: moon },
 };

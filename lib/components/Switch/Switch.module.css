@@ -42,37 +42,37 @@
   transition: 0.4s;
 }
 
-.switch__slider:before {
+.switch__indicator {
   background-color: var(--dark-accent-color);
   border-radius: 50px;
   bottom: 4px;
-  content: "";
   height: 18px;
   left: 4px;
   position: absolute;
+  cursor: pointer;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   width: 18px;
+  z-index: 2;
+  mask-repeat: no-repeat;
+  mask-position: center;
 }
 
 .switch__input {
   visibility: hidden;
 }
 
-.switch__input:checked + .switch__slider {
+.switch__input:checked ~ .switch__slider {
   background-color: var(--switch-color);
 }
 
-.switch__input:checked + .switch__slider:before {
+.switch__input:checked ~ .switch__indicator {
   background-color: var(--light-shades-color);
   transform: translateX(18px);
 }
 
-.switch__input:disabled + .switch__slider {
-  opacity: 0.8;
-  cursor: default;
-}
-
-.switch__input:disabled + .switch__slider:hover {
+.switch__input:disabled ~ .switch__slider,
+.switch__input:disabled ~ .switch__indicator {
   opacity: 0.5;
+  cursor: default;
 }
