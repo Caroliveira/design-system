@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { disableStorybookArg } from "../../utils/constants";
-import moon from "../../../public/moon.svg";
-import sun from "../../../public/sun.svg";
+import moon from "/moon.svg";
+import sun from "/sun.svg";
+
 import { Switch } from ".";
 
 const meta: Meta<typeof Switch> = {
