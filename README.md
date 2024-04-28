@@ -17,3 +17,5 @@ To get started with @linaoliveira/design-system, you'll need to install the pack
 ```bash
 npm install @linaoliveira/design-system
 ```
+
+For a more detailed information on how to use, [check our documentation](https://ds.lina-oliveira.com/)!
