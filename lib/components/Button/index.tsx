@@ -3,7 +3,7 @@ import { ColorType } from "../../utils/types";
 import styles from "./Button.module.css";
 
 export type ButtonProps = {
-  color: ColorType;
+  color?: ColorType;
   variant?: "contained" | "outlined" | "text";
   size?: "small" | "medium" | "large";
   fullWidth?: boolean;

@@ -3,9 +3,11 @@ import { defaultColors } from "../utils/constants";
 import { ThemeContext } from "./ThemeContext";
 import "../assets/main.css";
 
+export type ColorsType = Partial<typeof defaultColors>
+
 export type ThemeProviderProps = {
   children: ReactNode;
-  colors?: Partial<typeof defaultColors>;
+  colors?: ColorsType;
   fixedTheme?: "dark" | "light";
 };
 
