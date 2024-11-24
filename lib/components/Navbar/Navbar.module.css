@@ -96,10 +96,20 @@
 
 .nav__list__item {
   position: relative;
+  color: var(--light-shades-color);
+}
+
+.nav__list__item:hover {
+  color: var(--brand-accent-color);
 }
 
 .nav__list__item--current {
   position: relative;
+  color: var(--link-color);
+}
+
+.nav__list__item--current:hover {
+  color: var(--link-hover-color);
 }
 
 .nav__list__item--current:after {
@@ -111,14 +121,6 @@
   left: 50%;
   position: absolute;
   width: 12px;
-}
-
-.nav__list__item a {
-  color: var(--light-shades-color);
-}
-
-.nav__list__item a:hover {
-  color: var(--brand-accent-color);
 }
 
 @media (min-width: 1024px) {

@@ -46,7 +46,7 @@ export type NavbarListProps = {
 Navbar.List = ({
   children,
   className = "",
-  openMobileNav,
+  openMobileNav = true,
   id = "navigation",
   ...rest
 }: NavbarListProps) => {
@@ -60,7 +60,7 @@ Navbar.List = ({
 };
 
 export type NavbarListItemProps = {
-  isActive: boolean;
+  isActive?: boolean;
 } & React.LiHTMLAttributes<HTMLLIElement>;
 
 Navbar.ListItem = ({
