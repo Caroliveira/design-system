@@ -1,0 +1,139 @@
+.nav {
+  align-items: center;
+  background-color: var(--dark-accent-color);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 16px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.nav__logo {
+  display: flex;
+  margin-right: auto;
+}
+
+.nav__menu {
+  background-color: var(--dark-accent-color);
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+}
+
+.nav__menu:hover {
+  box-shadow: none;
+}
+
+.nav__menu--open {
+  background-color: var(--brand-color);
+  height: 2px;
+  position: relative;
+}
+
+.nav__menu--open::before {
+  background-color: var(--brand-color);
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 20px;
+  top: 8px;
+}
+
+.nav__menu--open::after {
+  background-color: var(--brand-color);
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 20px;
+  bottom: 8px;
+}
+
+.nav__menu--close {
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.nav__menu--close::before {
+  background-color: var(--brand-color);
+  content: "";
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  width: 2px;
+  transform: rotate(45deg);
+}
+
+.nav__menu--close::after {
+  background-color: var(--brand-color);
+  content: "";
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  width: 2px;
+  transform: rotate(-45deg);
+}
+
+.nav__list {
+  align-items: center;
+  background-color: var(--dark-accent-color);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  left: 0;
+  padding: 16px 0 24px;
+  position: absolute;
+  top: 56px;
+  width: 100%;
+}
+
+.nav__list__item {
+  position: relative;
+}
+
+.nav__list__item--current {
+  position: relative;
+}
+
+.nav__list__item--current:after {
+  background-color: var(--brand-color);
+  border-radius: 8px;
+  bottom: -8px;
+  content: "";
+  height: 4px;
+  left: 50%;
+  position: absolute;
+  width: 12px;
+}
+
+.nav__list__item a {
+  color: var(--light-shades-color);
+}
+
+.nav__list__item a:hover {
+  color: var(--brand-accent-color);
+}
+
+@media (min-width: 1024px) {
+  .nav {
+    justify-content: flex-start;
+  }
+
+  .nav__menu {
+    display: none;
+  }
+
+  .nav__list {
+    box-shadow: none;
+    flex-direction: row;
+    padding: 0;
+    position: static;
+  }
+}
