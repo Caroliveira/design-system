@@ -83,15 +83,18 @@
 .nav__list {
   align-items: center;
   background-color: var(--dark-accent-color);
-  box-shadow: var(--box-shadow);
   display: flex;
-  flex-direction: column;
   gap: 24px;
   left: 0;
-  padding: 16px 0 24px;
-  position: absolute;
   top: 56px;
   width: 100%;
+}
+
+.nav__list--mobile {
+  box-shadow: var(--box-shadow);
+  flex-direction: column;
+  padding: 16px 0 24px;
+  position: absolute;
 }
 
 .nav__list__item {
@@ -121,6 +124,14 @@
   left: 50%;
   position: absolute;
   width: 12px;
+}
+
+.nav__list__item a {
+  color: var(--light-shades-color);
+}
+
+.nav__list__item a:hover {
+  color: var(--link-hover-color);
 }
 
 @media (min-width: 1024px) {

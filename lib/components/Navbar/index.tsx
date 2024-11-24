@@ -46,12 +46,16 @@ export type NavbarListProps = {
 Navbar.List = ({
   children,
   className = "",
-  openMobileNav = true,
+  openMobileNav,
   id = "navigation",
   ...rest
 }: NavbarListProps) => {
-  const navbarListClass = [styles.nav__list, className].join(" ");
-  if (!openMobileNav) return <></>;
+  const navbarListClass = [
+    styles.nav__list,
+    openMobileNav !== undefined ? styles["nav__list--mobile"] : "",
+    className,
+  ].join(" ");
+  if (openMobileNav === false) return <></>;
   return (
     <ul id={id} className={navbarListClass} {...rest}>
       {children}
